@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Name="s"
+             x:Class="sa2.Views.animate">
+    <ContentPage.Content>
+
+        <Grid RowDefinitions="Auto, Auto, *" BackgroundColor="#F3F3F3" RowSpacing="20">
+          
+     
+            
+                    
+                
+                <CollectionView  ItemsSource="{Binding Budgets ,Source={x:Reference s}}"        
+                                
+                        VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand" HeightRequest="100" >
+                    
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Horizontal" HorizontalItemSpacing="23"></GridItemsLayout>
+                    </CollectionView.ItemsLayout>
+
+                <CollectionView.ItemTemplate  >
+                            
+                            <DataTemplate   >
+                                <Grid HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand"  ColumnSpacing="43">
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                </Grid.GestureRecognizers>
+                                <BoxView x:Name="MainBg" CornerRadius="20" BackgroundColor="{Binding Color}" IsVisible="False"/>
+                                    <Grid ColumnDefinitions="Auto, Auto" ColumnSpacing="0" Padding="10">
+                                        <StackLayout x:Name="DetailsView" Grid.Column="1" VerticalOptions="Center" Padding="20,0" 
+                                             TranslationX="-40" IsVisible="False">
+                                            <Label Text ="{Binding Name}" FontSize="16" TextColor="White" FontAttributes="Bold"/>
+                                            <Label Text ="{Binding Amount, StringFormat='${0:N0}'}" FontSize="14" TextColor="White"
+                                           FontAttributes="Bold"/>
+                                        </StackLayout>
+                                        <BoxView CornerRadius="20" HeightRequest="70" WidthRequest="70" 
+                                     BackgroundColor="Black" />
+                                        <Image Source="{Binding Image}" HeightRequest="30" WidthRequest="30" 
+                                   HorizontalOptions="Center" VerticalOptions="Center"/>
+
+                                    
+                                </Grid>
+                                </Grid>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+
+            
+    
+            <Grid Grid.Row="2" BackgroundColor="White" Padding="30">
+                <Label FontSize="70" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="$"/>
+                            <Span Text="{Binding SelectedAmount, StringFormat='{0:N0}'}" TextColor="Black"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

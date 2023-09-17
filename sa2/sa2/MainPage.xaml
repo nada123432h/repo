@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+             x:Class="sa2.MainPage"
+                          xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+NavigationPage.HasNavigationBar="False"
+            
+             BackgroundImageSource="stars.jpg">
+    <ContentPage.Resources>
+
+
+        <ResourceDictionary>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+
+        <Grid Padding="0,30,0,0">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="700"></RowDefinition>
+
+
+
+            </Grid.RowDefinitions>
+            <Path Data="M333 0L411.58 194.512H665.87L460.145 314.727L538.725 509.238L333 389.023L127.275 509.238L205.855 314.727L0.130219 194.512H254.42L333 0Z"
+      Fill="#141E46"
+                  
+      WidthRequest="500"
+                  Margin="-120,0,0,-120"
+  
+                  Opacity=".8"
+      HeightRequest="500" />
+
+            <StackLayout Grid.Row="0">
+
+
+
+
+
+                <!-- StackLayout Container -->
+
+                <StackLayout  VerticalOptions="CenterAndExpand" HeightRequest="230" HorizontalOptions="CenterAndExpand"  >
+                    <!-- Entry with Icon -->
+
+
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" >
+                        <Image  WidthRequest="24" x:Name="emimg" HeightRequest="24" VerticalOptions="Center" >
+                            <Image.Source >
+                                <FontImageSource Glyph="" Color="AliceBlue" FontFamily="FontIconSolid"></FontImageSource>
+                            </Image.Source>
+                        </Image>
+
+
+                        <!-- Content Frame -->
+
+                        <Frame CornerRadius="30" x:Name="mainRect" HasShadow="True"
+                              xct:ShadowEffect.Color="AliceBlue"
+                               Padding="0" AbsoluteLayout.LayoutBounds="0,0,1,1"
+                               AbsoluteLayout.LayoutFlags="All">
+
+
+                            <Entry Placeholder="E-Mail"  Keyboard="Text" x:Name="snakeEntry" 
+               CharacterSpacing="5" PlaceholderColor="#141E46" HorizontalOptions="StartAndExpand" WidthRequest="260"
+               Focused="snakeEntry_Focused" Unfocused="snakeEntry_Unfocused"  >
+
+                            </Entry>
+                        </Frame>
+                    </StackLayout>
+
+                    <!-- Entry with Password Icon -->
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                        <Image  WidthRequest="24" x:Name="emimg2"  HeightRequest="24" VerticalOptions="Center" >
+                            <Image.Source >
+                                <FontImageSource Glyph="" FontFamily="FontIconSolid"></FontImageSource>
+                            </Image.Source>
+                        </Image>
+                        <Frame   CornerRadius="30"    HasShadow="True"
+                                 xct:ShadowEffect.Color="AliceBlue"
+                 
+                                 Padding="0">
+                            <Entry Placeholder="Password" Keyboard="Numeric" Focused="Entry_Focused" Unfocused="Entry_Unfocused" 
+                                   PlaceholderColor="#141E46" CharacterSpacing="5" 
+                                   IsPassword="True" HorizontalOptions="StartAndExpand" WidthRequest="260" />
+                        </Frame>
+
+                    </StackLayout>
+
+                    <!-- Rest of your UI elements -->
+                    <Button Clicked="loginButton_Clicked_1" x:Name="loginButton" 
+                       
+                            Text="Login"
+                            FontSize="18" BorderColor="White"
+                            
+                            BorderWidth="2" TextColor="AliceBlue" 
+                            BackgroundColor="#141E46" HorizontalOptions="CenterAndExpand"    
+                  WidthRequest="200"
+                            HeightRequest="40"
+                            CornerRadius="30" VerticalOptions="CenterAndExpand"></Button>
+
+                    <Label Text="Don't have an Account" FontSize="16" HorizontalTextAlignment="Center" TextColor="White"></Label>
+                    <Label Text="Sign Up" TextColor="AliceBlue" FontAttributes="Bold" FontSize="18" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" WidthRequest="190" VerticalOptions="EndAndExpand"></Label>
+
+
+
+                    <forms:AnimationView
+    x:Name="animationView"
+             
+                        HeightRequest="120"
+                        WidthRequest="900"
+                        Grid.Row="3"
+    Animation="animation_lmd1pdy6.json"
+    AnimationSource="AssetOrBundle"
+                  
+    RepeatCount="3"
+  
+                        
+            
+    VerticalOptions="EndAndExpand"
+    HorizontalOptions="EndAndExpand" />
+
+
+                </StackLayout>
+
+
+            </StackLayout>
+
+        </Grid>
+    </ContentPage.Content>
+
+</ContentPage>
